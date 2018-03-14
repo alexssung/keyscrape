@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.3.1'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails', '~> 4.3.1'
+gem 'nokogiri', '~> 1.8.2'
 # gem 'redis', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
