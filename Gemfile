@@ -12,7 +12,8 @@ gem 'webpacker', '~> 3.3.1'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'nokogiri', '~> 1.8.2'
-# gem 'redis', '~> 4.0'
+gem 'sidekiq', '~> 5.1.1'
+gem 'redis', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
