@@ -1,0 +1,1 @@
+json.array! @keyword_scrapes, :id, :created_at, :keywords, :completed?

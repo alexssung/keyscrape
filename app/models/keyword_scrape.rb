@@ -2,11 +2,13 @@
 class KeywordScrape < ApplicationRecord
   require 'open-uri'
   
+  belongs_to :user
+  
   def completed?
     completed_at.present?
   end
   
-  # performs scraping based on its urls and keywords attributes
+  # performs scraping based on its urls and keywords
   def scrape!
     result = {}
     threads = []
