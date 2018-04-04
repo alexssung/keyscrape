@@ -1,4 +1,4 @@
 class PagesController < ApplicationController
-  def dashboard
+  def app
   end
 end
