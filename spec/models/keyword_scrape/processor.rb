@@ -14,7 +14,7 @@ describe KeywordScrape::Processor do
       
       expect(keyword_scrape.result).to match(
         a_hash_including(
-          "http://example.com" => { "waldo" => 1, "wilma" => 1 }
+          "example.com" => { "waldo" => 1, "wilma" => 1 }
         )
       )
       expect(keyword_scrape.complete?).to be_truthy
