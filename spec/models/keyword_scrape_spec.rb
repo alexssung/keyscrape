@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe KeywordScrape, type: :model do
+describe KeywordScrape do
   context "associations" do
     it { is_expected.to belong_to(:user) }
   end
