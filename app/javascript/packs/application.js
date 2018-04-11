@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Dashboard from 'containers/Dashboard'
+import App from 'containers/App'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = document.querySelector('#app')
-  ReactDOM.render(<Dashboard />, app)
+  ReactDOM.render(<App />, app)
 })
