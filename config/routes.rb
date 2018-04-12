@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   end
   
   namespace :api, defaults: { format: :json } do
-    resources :keyword_scrapes, only: [:index]
+    resources :keyword_scrapes, only: [:index] do
+      member do
+        get 'download'
+      end
+    end
   end
 end

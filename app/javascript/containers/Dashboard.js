@@ -1,6 +1,6 @@
 import React from 'react'
 import KeywordScrapeForm from 'components/KeywordScrapeForm'
-import KeywordScrapeList from 'components/KeywordScrapeList'
+import KeywordScrapesTable from 'components/KeywordScrapesTable'
 import axios from 'axios'
 
 export default class Dashboard extends React.Component {
@@ -24,7 +24,7 @@ export default class Dashboard extends React.Component {
             <KeywordScrapeForm />
           </div>
           <div className="row">
-            <KeywordScrapeList items={this.state.keyword_scrapes}/>
+            <KeywordScrapesTable items={this.state.keyword_scrapes}/>
           </div>
         </div>
       </div>
