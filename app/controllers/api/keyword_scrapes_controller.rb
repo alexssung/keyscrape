@@ -11,7 +11,7 @@ class Api::KeywordScrapesController < ApplicationController
     if keyword_scrape.user_id == current_user.id
       send_data keyword_scrape.to_csv, filename: "scrape_report.csv", type: "application/csv"
     else
-      render text: "forbidden"
+      render plain: "forbidden"
     end
   end
 end
