@@ -34,10 +34,10 @@ class Api::KeywordScrapesController < ApplicationController
     end
     
     def parse_keywords(string)
-      string.split(',').map(&:strip).uniq
+      string.split(',').reject(&:blank?).map(&:strip).uniq
     end
     
     def parse_urls(csv)
-      csv.read.split("\n").uniq
+      csv.read.split("\n").reject(&:blank?).uniq
     end
 end
