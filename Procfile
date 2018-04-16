@@ -1,2 +1,2 @@
-web: bundle exec puma -e production
-worker: bundle exec sidekiq -e production
+web: bundle exec puma
+worker: bundle exec sidekiq
