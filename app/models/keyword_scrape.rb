@@ -12,7 +12,8 @@ class KeywordScrape < ApplicationRecord
   def to_csv
     if result.present?
       csv = "site,#{keywords.join(',')}\n"
-      result.each do |url, data|
+      sorted_result = result.sort_by { |url, data| data.values.sum }.reverse
+      sorted_result.each do |url, data|
         keyword_counts = keywords.map { |keyword| data[keyword] }.join(",")
         csv << "#{url},#{keyword_counts}\n"
       end

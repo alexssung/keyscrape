@@ -12,10 +12,13 @@ Rails.application.routes.draw do
   end
   
   namespace :api, defaults: { format: :json } do
-    resources :keyword_scrapes, only: [:index] do
+    resources :keyword_scrapes, only: [:index, :create] do
       member do
         get 'download'
       end
     end
   end
+  
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end

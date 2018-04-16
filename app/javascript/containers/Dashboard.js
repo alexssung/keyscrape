@@ -9,9 +9,14 @@ export default class Dashboard extends React.Component {
     this.state = {
       keyword_scrapes: [],
     };
+    this.getKeywordScrapes = this.getKeywordScrapes.bind(this)
   }
   
   componentDidMount() {
+    this.getKeywordScrapes();
+  }
+  
+  getKeywordScrapes() {
     axios.get("api/keyword_scrapes")
       .then(response => this.setState({ keyword_scrapes: response.data }));
   }
@@ -21,7 +26,7 @@ export default class Dashboard extends React.Component {
       <div id="dashboard">
         <div className="container">
           <div className="row">
-            <KeywordScrapeForm />
+            <KeywordScrapeForm refreshKeywordScrapes={this.getKeywordScrapes}/>
           </div>
           <div className="row">
             <KeywordScrapesTable items={this.state.keyword_scrapes}/>
