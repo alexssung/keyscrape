@@ -32,7 +32,7 @@ describe KeywordScrape do
     it "returns a CSV representation of its results" do
       keyword_scrape = build(:keyword_scrape, keywords: ["apple", "orange"], result: example_result)
       
-      expect(keyword_scrape.to_csv).to eq("site,apple,orange\nexample1.com,10,0\nexample2.com,0,10\n")
+      expect(keyword_scrape.to_csv).to eq("site,apple,orange\nexample1.com,20,0\nexample2.com,0,10\n")
     end
     
     context "when result is blank" do
@@ -44,7 +44,7 @@ describe KeywordScrape do
     
     def example_result
       {
-        "example1.com" => { "apple" => 10, "orange" => 0 },
+        "example1.com" => { "apple" => 20, "orange" => 0 },
         "example2.com" => { "apple" => 0, "orange" => 10 }
       }
     end
