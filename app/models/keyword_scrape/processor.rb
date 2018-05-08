@@ -9,7 +9,7 @@ class KeywordScrape::Processor
   
   READ_TIMEOUT = 5
   THREAD_POOL_SIZE = 50
-  SUB_URL_SAMPLE_SIZE = 50
+  MAX_SUB_URLS = 100
   
   def initialize(keyword_scrape)
     @keyword_scrape = keyword_scrape
@@ -66,7 +66,7 @@ class KeywordScrape::Processor
       URI.parse(url).scheme.blank? ? "http://#{url}" : url
     end
     
-    # get a sample of relevant subpage urls in html file
+    # get relevant subpage urls in html file
     def get_sub_urls(html_file)
       doc, response_uri = html_file.doc, html_file.response_uri
       links = doc.at('body').css('a')
@@ -79,7 +79,7 @@ class KeywordScrape::Processor
         else
           true
         end
-      end.sample(SUB_URL_SAMPLE_SIZE)
+      end.sample(MAX_SUB_URLS)
       hrefs.map { |href| URI.join(response_uri.to_s, href).to_s }
     end
     

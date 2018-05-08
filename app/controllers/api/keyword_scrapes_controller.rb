@@ -38,6 +38,6 @@ class Api::KeywordScrapesController < ApplicationController
     end
     
     def parse_urls(csv)
-      csv.read.split("\n").reject(&:blank?).uniq
+      csv.read.remove("\r").split("\n").map(&:strip).reject(&:blank?).uniq
     end
 end
